@@ -1,17 +1,3 @@
-"""
-Runs the xe.com spider month-by-month in fresh processes.
-
-Default window: 2013-04-01 -> 2025-08-31
-- Spawns a new Scrapy process per month (like restarting the terminal each time)
-- Retries failed months
-- Sleeps a bit between months
-- Keeps a resume file so you can safely re-run
-
-Usage:
-  python run_batches.py
-  # or override dates:
-  python run_batches.py --start 2013-04-01 --end 2025-08-31 --sleep-min 8 --sleep-max 20 --retries 2
-"""
 import argparse
 import calendar
 import datetime as dt

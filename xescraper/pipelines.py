@@ -25,8 +25,6 @@ class MySQLPipeline:
         spider.logger.info("MySQL database session closed.")
 
     def process_item(self, item, spider):
-        # We only expect USD rows to reach here (spider filters),
-        # but let's be defensive.
         currency = (item.get("currency") or "").upper()
         if currency != "USD":
             spider.logger.debug(f"Skipping non-USD row: {item}")
